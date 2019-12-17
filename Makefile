@@ -9,6 +9,8 @@ PKG_MAINTAINER:=Nick Peng <pymumu@gmail.com>
 PKG_VERSION:=1.2019
 PKG_RELEASE:=28
 
+include $(INCLUDE_DIR)/package.mk
+
 LUCI_TITLE:=LuCI for smartdns
 LUCI_DESCRIPTION:=Provides Luci for smartdns
 LUCI_DEPENDS:=+luci-compat +smartdns
@@ -21,6 +23,6 @@ help
 	Version: $(PKG_VERSION)-$(PKG_RELEASE)
 endef
 
-include ../../luci.mk
+include $(TOPDIR)/feeds/luci/luci.mk
 
 # call BuildPackage - OpenWrt buildroot signature
